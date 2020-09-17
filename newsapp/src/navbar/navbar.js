@@ -14,10 +14,10 @@ function NavBar (){
     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="/"><Link to="/">Home</Link></Nav.Link>
-      <Nav.Link href="/business"><Link to="/">business</Link></Nav.Link>
-      <Nav.Link href="/science"><Link to="/">science</Link></Nav.Link>
-      <Nav.Link href="/health"><Link to="/">health</Link></Nav.Link>
-      <Nav.Link href="/entertainment"><Link to="/">entertainment</Link></Nav.Link>
+      <Nav.Link href="/business"><Link to="/business">business</Link></Nav.Link>
+      <Nav.Link href="/science"><Link to="/science">science</Link></Nav.Link>
+      <Nav.Link href="/health"><Link to="/health">health</Link></Nav.Link>
+      <Nav.Link href="/entertainment"><Link to="/entertainment">entertainment</Link></Nav.Link>
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
