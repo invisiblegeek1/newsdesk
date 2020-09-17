@@ -1,0 +1,34 @@
+.navbar{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+  
+  
+  }
+  .navBrand{
+    justify-self: start;
+  
+  }
+    .navItems{
+      display: inline-block;
+      
+      
+     
+      justify-self: end;
+    list-style: none;
+   
+    float: right;
+  
+  }
+  .navBar{
+    display: flex;
+    justify-content: space-around;
+  }
+  .navItems li{
+    margin-right: 1em;
+    float: left;
+    
+  }
+  .navItems li a{
+    text-decoration:none;
+  }
