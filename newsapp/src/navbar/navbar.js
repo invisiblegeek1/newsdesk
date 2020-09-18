@@ -8,13 +8,13 @@ import {Navbar,Nav,Form,FormControl,Button} from "react-bootstrap"
 function NavBar (){
   return (
 
-    <header>
+    
     <div>
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" fixed="top">
     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
     <Nav className="mr-auto">
-      <Nav.Link href="/"><Link to="/">Home</Link></Nav.Link>
-      <Nav.Link href="/business"><Link to="/business">business</Link></Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/business">business</Nav.Link>
       <Nav.Link href="/science"><Link to="/science">science</Link></Nav.Link>
       <Nav.Link href="/health"><Link to="/health">health</Link></Nav.Link>
       <Nav.Link href="/entertainment"><Link to="/entertainment">entertainment</Link></Nav.Link>
@@ -29,7 +29,7 @@ function NavBar (){
 
     
     </div>
-    </header>
+    
     
 
   )
