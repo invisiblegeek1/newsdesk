@@ -1,9 +1,9 @@
-import React,{useState,useEffect} from 'react';
+import React,{useEffect} from 'react';
 import "./component.css";
 import Data from "./data";
 export const Card=(props)=>{
   
-  const [data,dataHandler] = useState([Data])
+  // const [data,dataHandler] = useState([Data])
   useEffect(()=>{
     // async function loadData(){
     // fetch(`https://newszapp.herokuapp.com/${props.title?props.title:null}`)

@@ -10,7 +10,7 @@ function NavBar (){
 
     <header>
     <div>
-    <Navbar bg="primary" variant="dark">
+    <Navbar bg="dark" variant="dark">
     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link href="/"><Link to="/">Home</Link></Nav.Link>
