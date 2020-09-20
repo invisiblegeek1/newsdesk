@@ -15,7 +15,7 @@ function App() {
             <Route
               path="/"
               exact
-              component={() => <Card title="top-headlines" />}
+              render={() => <Card title="top-headlines" />}
             />
             <Route
               path="/business"
