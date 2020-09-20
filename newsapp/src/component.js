@@ -17,15 +17,15 @@ export const Card = (props) => {
         .catch((error) => console.log(error));
     }
     loadData();
-  }, []);
+  }, [props.title]);
 
   return (
     
     <div className="cardCcontainer" id="container">
       {data
-        ? data.map((res) => {
+        ? data.map((res,index) => {
             return (
-              <div className="cardContainer" id="card">
+              <div className="cardContainer" id="card" key={index}>
                 <div className="imageContainer" id="photocontainer">
                   <img
                     className="image"
