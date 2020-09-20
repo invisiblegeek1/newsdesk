@@ -7,7 +7,7 @@ export const Card = (props) => {
   useEffect(() => {
     async function loadData() {
       fetch(
-        `https://newszapp.herokuapp.com/${props.title ? props.title : null}`
+        `https://newszapp.herokuapp.com/${props.title }`
       )
         .then((response) => response.json())
         .then((res) => {
