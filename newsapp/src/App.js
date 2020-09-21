@@ -42,6 +42,11 @@ function App() {
               exact
               component={() => <Card title="technology" />}
             />
+             <Route
+              path="/sports"
+              exact
+              component={() => <Card title="sports" />}
+            />
           </Switch>
         </div>
       </div>

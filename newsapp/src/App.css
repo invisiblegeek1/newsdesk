@@ -1,6 +1,6 @@
 .App {
   
- 
+  background-color: #EAEDED;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -12,5 +12,6 @@
     grid-gap: 1rem;
     grid-template-rows: repeat(5, 1fr);
     place-items: center;
+   
 }
 

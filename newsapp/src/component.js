@@ -30,7 +30,7 @@ export const Card = (props) => {
                   <img
                     className="image"
                     id="photo"
-                    src={res.urlToImage}
+                    src={res.urlToImage?res.urlToImage:"https://newsapi.org/images/n-logo-border.png"}
                     alt=""
                   />
                 </div>
