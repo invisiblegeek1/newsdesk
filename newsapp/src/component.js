@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./component.css";
+import {withRouter} from 'react-router-dom';
 
 
 
-export const Card = (props) => {
+
+ function Card(props){
   const [data, dataHandler] = useState([]);
   useEffect(() => {
     async function loadData() {
+      let url=props.match.params.id?`search/${props.match.params.id}`:props.title;
       fetch(
-        `https://newszapp.herokuapp.com/${props.title }`
+        `https://newszapp.herokuapp.com/${url}`
       )
         .then((response) => response.json())
         .then((res) => {
@@ -18,11 +21,13 @@ export const Card = (props) => {
         .catch((error) => console.log(error));
     }
     loadData();
-  }, [props.title]);
+  }, [props.title,props.match.params.id]);
+  
 
   return (
     
     <div className="cardCcontainer" id="container">
+      
       {data
         ? data.map((res,index) => {
             return (
@@ -44,4 +49,5 @@ export const Card = (props) => {
         :null}
     </div>
   );
-};
+}
+ export default withRouter(Card);

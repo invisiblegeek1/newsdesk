@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Navbar,
   Nav,
@@ -9,7 +9,8 @@ import {
 import "./navbar.css";
 import { withRouter, NavLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar(props) {
+  const [input,stateHandler]=useState("")
   return (
     <div className="navbar-container">
       <Navbar
@@ -49,6 +50,10 @@ function NavBar() {
         </Nav>
         <Form
           inline
+          onSubmit={(e) => {
+            e.preventDefault();
+            props.history.push(`/search/${input}`);
+          }}
          
         >
           <FormControl
@@ -56,6 +61,8 @@ function NavBar() {
             type="text"
             placeholder="Search"
             className="mr-sm-2"
+           
+            onChange={(e) => stateHandler(e.target.value)}
         
           />
           <Button type="submit" className="my-2 my-sm-0">

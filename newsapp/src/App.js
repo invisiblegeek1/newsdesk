@@ -3,11 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navbar from "./navbar/navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Card } from "./component";
+import Card  from "./component";
 
-function App() {
+function App(props) {
+ 
   return (
+  
     <Router>
+      
       <div className="App">
         <Navbar />
         <div className="container">
@@ -50,7 +53,7 @@ function App() {
              <Route
               path="/search/:id"
               exact
-              component={() => <Card title="sports" />}
+              component={Card}
             />
           </Switch>
         </div>
