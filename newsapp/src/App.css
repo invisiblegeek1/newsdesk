@@ -1,17 +1,12 @@
 .App {
   
-  background-color: #EAEDED;
+  margin: 0;
+  padding: 0;
   text-align: center;
   justify-content: center;
   align-items: center;
+  background-color: #f2f5ff;
   
 }
-.container{
-  height: auto;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-rows: repeat(5, 1fr);
-    place-items: center;
-   
-}
+
 

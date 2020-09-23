@@ -6,3 +6,15 @@
 background-color: #fafafa !important;
 color:black !important;
 }
+.navbar-containe{
+    display: flex;
+    position: relative;
+    top: 0;
+    flex-wrap: wrap;
+
+
+}
+.my-2{
+    background-color: aqua !important;
+
+}
