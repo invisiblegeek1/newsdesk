@@ -47,6 +47,11 @@ function App() {
               exact
               component={() => <Card title="sports" />}
             />
+             <Route
+              path="/search/:id"
+              exact
+              component={() => <Card title="sports" />}
+            />
           </Switch>
         </div>
       </div>

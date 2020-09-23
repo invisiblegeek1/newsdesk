@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./component.css";
 
 
+
 export const Card = (props) => {
   const [data, dataHandler] = useState([]);
   useEffect(() => {
@@ -36,10 +37,7 @@ export const Card = (props) => {
                 </div>
                 <p className="title">{res.title}</p>
 
-                <div className="article">
-                  <p>{res.description}</p>
-                  <button className="readmore">Read more</button>
-                </div>
+                
               </div>
             );
           })

@@ -11,7 +11,7 @@ import { withRouter, NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div>
+    <div className="navbar-container">
       <Navbar
         bg="primary"
         variant="dark"
