@@ -21,7 +21,7 @@ import {Button} from 'react-bootstrap';
       )
         .then((response) => response.json())
         .then((res) => {
-          console.log(res.articles);
+          
           dataHandler(res.articles);
         })
         .catch((error) => console.log(error));

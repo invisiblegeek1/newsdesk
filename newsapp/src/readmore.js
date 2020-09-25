@@ -1,15 +1,15 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {withRouter} from 'react-router-dom';
 import './readmore.css';
 
 const Readmore=(props)=>{
-    const [input,inputHandler]=useState(props.location.data)
+    const input=props.location.data;
     
     return (
         <div className="readmore-container">
         <div className="readmoreimageContainer"><img className="image" src={input.image} alt="" /></div>    
         
-        <h3 >{input.title}</h3>
+        <h1 id='heading'>{input.title}</h1><hr></hr>
         
         <div className="content">{input.content}</div>
         </div>
