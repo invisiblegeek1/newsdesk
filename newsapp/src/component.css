@@ -32,7 +32,7 @@
     
 
 .title{
-    background-color: rgb(192, 236, 238);
+    
     border-radius: 0 0 10px 10px ;
     text-align:left;
     padding:5px;
@@ -50,4 +50,12 @@
     height: 100%;
     display: inline-block;
     border-radius:0 0 10px 10px;
+}
+.title-container{
+    background-color: rgb(192, 236, 238);
+
+}
+.title-container .readmorebtn{
+    width: 95% !important;
+    
 }

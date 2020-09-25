@@ -61,10 +61,10 @@ import {Button} from 'react-bootstrap';
                     alt=""
                   />
                 </div>
-                <p className="title">{res.title.replace(/^(.{50}[^\s]*).*/, "$1")+"..."}</p>
-                <Button variant="primary" size="lg" onClick={()=>readmore(index,res)}>
+                <div className="title-container"><p className="title">{res.title.replace(/^(.{50}[^\s]*).*/, "$1")+"..."}</p><Button className="readmorebtn" variant="primary" size="lg" onClick={()=>readmore(index,res)}>
     Primary button
-  </Button>
+  </Button></div>
+                
 
                 
               </div>
