@@ -5,6 +5,7 @@ import Navbar from "./navbar/navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Card  from "./component";
 
+
 function App(props) {
  
   return (
@@ -52,6 +53,11 @@ function App(props) {
             />
              <Route
               path="/search/:id"
+              exact
+              component={Card}
+            />
+            <Route
+              path="/readmore/:id"
               exact
               component={Card}
             />

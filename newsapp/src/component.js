@@ -1,35 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React  from "react";
 import "./component.css";
 import {withRouter} from 'react-router-dom';
+import data from './data';
+import {Button} from 'react-bootstrap';
+
+
+
+
 
 
 
 
  function Card(props){
-  const [data, dataHandler] = useState([]);
-  useEffect(() => {
-    async function loadData() {
-      let url=props.match.params.id?`search/${props.match.params.id}`:props.title;
-      fetch(
-        `https://newszapp.herokuapp.com/${url}`
-      )
-        .then((response) => response.json())
-        .then((res) => {
-          console.log(res.articles);
-          dataHandler(res.articles);
-        })
-        .catch((error) => console.log(error));
-    }
-    loadData();
-  }, [props.title,props.match.params.id]);
+  // const [data, dataHandler] = useState(Data);
+  // useEffect(() => {
+  //   // async function loadData() {
+  //   //   let url=props.match.params.id?`search/${props.match.params.id}`:props.title;
+  //   //   fetch(
+  //   //     `https://newszapp.herokuapp.com/${url}`
+  //   //   )
+  //   //     .then((response) => response.json())
+  //   //     .then((res) => {
+  //   //       console.log(res.articles);
+  //   //       dataHandler(res.articles);
+  //   //     })
+  //   //     .catch((error) => console.log(error));
+  //   // }
+  //   // loadData();
+  // }, [props.title,props.match.params.id]);
+
+  const readmore=(index,res)=>{
+    props.history.push({
+      pathname:`/readmore/${res.title}`,
+      data:{
+        title:res.title.replace(/^(.{50}[^\s]*).*/, "$1")+"...",
+        image:res.urlToImage?res.urlToImage:"https://newsapi.org/images/n-logo-border.png",
+        content:res.content
+
+
+      }
+      
+    })
+
+  }
+  
   
 
   return (
     
-    <div className="cardCcontainer" id="container">
-      
-      {data
-        ? data.map((res,index) => {
+    <div id="container"> {
+      data.map((res,index) => {
             return (
               <div className="cardContainer" id="card" key={index}>
                 <div className="imageContainer" id="photocontainer">
@@ -40,14 +60,17 @@ import {withRouter} from 'react-router-dom';
                     alt=""
                   />
                 </div>
-                <p className="title">{res.title}</p>
+                <p className="title">{res.title.replace(/^(.{50}[^\s]*).*/, "$1")+"..."}</p>
+                <Button variant="primary" size="lg" onClick={()=>readmore(index,res)}>
+    Primary button
+  </Button>
 
                 
               </div>
             );
-          })
-        :null}
+          })} 
     </div>
   );
 }
  export default withRouter(Card);
+//  t.replace(/^(.{1}[^\s]*).*/, "$1") + "\n"
