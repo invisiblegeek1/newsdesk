@@ -1,7 +1,7 @@
-import React  from "react";
+import React,{useEffect,useState}  from "react";
 import "./component.css";
 import {withRouter} from 'react-router-dom';
-import data from './data';
+
 import {Button} from 'react-bootstrap';
 
 
@@ -12,22 +12,22 @@ import {Button} from 'react-bootstrap';
 
 
  function Card(props){
-  // const [data, dataHandler] = useState(Data);
-  // useEffect(() => {
-  //   // async function loadData() {
-  //   //   let url=props.match.params.id?`search/${props.match.params.id}`:props.title;
-  //   //   fetch(
-  //   //     `https://newszapp.herokuapp.com/${url}`
-  //   //   )
-  //   //     .then((response) => response.json())
-  //   //     .then((res) => {
-  //   //       console.log(res.articles);
-  //   //       dataHandler(res.articles);
-  //   //     })
-  //   //     .catch((error) => console.log(error));
-  //   // }
-  //   // loadData();
-  // }, [props.title,props.match.params.id]);
+  const [data, dataHandler] = useState([]);
+  useEffect(() => {
+    async function loadData() {
+      let url=props.match.params.id?`search/${props.match.params.id}`:props.title;
+      fetch(
+        `https://newszapp.herokuapp.com/${url}`
+      )
+        .then((response) => response.json())
+        .then((res) => {
+          console.log(res.articles);
+          dataHandler(res.articles);
+        })
+        .catch((error) => console.log(error));
+    }
+    loadData();
+  }, [props.title,props.match.params.id]);
 
   const readmore=(index,res)=>{
     props.history.push({
@@ -35,14 +35,15 @@ import {Button} from 'react-bootstrap';
       data:{
         title:res.title.replace(/^(.{50}[^\s]*).*/, "$1")+"...",
         image:res.urlToImage?res.urlToImage:"https://newsapi.org/images/n-logo-border.png",
-        content:res.content
+        content:res.content,
+        index:index
 
 
       }
       
-    })
+    });
 
-  }
+  };
   
   
 

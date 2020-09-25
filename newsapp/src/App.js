@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./navbar/navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Card  from "./component";
+import Readmore from './readmore';
 
 
 function App(props) {
@@ -59,7 +60,7 @@ function App(props) {
             <Route
               path="/readmore/:id"
               exact
-              component={Card}
+              component={Readmore}
             />
           </Switch>
         </div>
