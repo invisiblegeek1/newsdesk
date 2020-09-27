@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./component.css";
 import { withRouter } from "react-router-dom";
-
+import Data from './data';
 import { Button } from "react-bootstrap";
 
 function Card(props) {
-  const [data, dataHandler] = useState([]);
-  useEffect(() => {
-    async function loadData() {
-      let url = props.match.params.id
-        ? `search/${props.match.params.id}`
-        : props.title;
-      fetch(`https://newszapp.herokuapp.com/${url}`)
-        .then((response) => response.json())
-        .then((res) => {
-          dataHandler(res.articles);
-        })
-        .catch((error) => console.log(error));
-    }
-    loadData();
-  }, [props.title, props.match.params.id]);
+  const [data, dataHandler] = useState(Data);
+  // useEffect(() => {
+  //   async function loadData() {
+  //     let url = props.match.params.id
+  //       ? `search/${props.match.params.id}`
+  //       : props.title;
+  //     fetch(`https://newszapp.herokuapp.com/${url}`)
+  //       .then((response) => response.json())
+  //       .then((res) => {
+  //         dataHandler(res.articles);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   }
+  //   loadData();
+  // }, [props.title, props.match.params.id]);
 
   const readmore = (index, res) => {
     props.history.push({
@@ -51,6 +51,7 @@ function Card(props) {
               <p className="title">
                 {res.title.replace(/^(.{50}[^\s]*).*/, "$1") + "..."}
               </p>
+              
               <Button
                 className="readmorebtn"
                 variant="outline-primary"
@@ -59,6 +60,7 @@ function Card(props) {
               >
                 Readmore
               </Button>
+              
             </div>
           </div>
         );

@@ -1,18 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Carousel from 'react-bootstrap';
 
 function header(props){
+  const [data,datahandler]=useState(props.Data);
     return(
         <Carousel>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="holder.js/800x400?text=First slide&bg=373940"
+      className="d-block w-100 image"
+      src={
+        input[inx].urlToImage
+          ? input[inx].urlToImage
+          : "https://newsapi.org/images/n-logo-border.png"
+      }
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3>{input[inx].title}</h3>
+      <p>{input[inx].content.split("[+")[0]}.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item></Carousel.Item>
