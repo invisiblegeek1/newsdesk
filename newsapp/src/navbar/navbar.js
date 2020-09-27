@@ -14,8 +14,8 @@ function NavBar(props) {
   return (
     <div className="navbar-container">
       <Navbar
-        bg="primary"
-        variant="dark"
+        bg="light"
+        variant="light"
         fixed="top"
         expand="lg"
         className="mb-3"
@@ -65,7 +65,7 @@ function NavBar(props) {
             onChange={(e) => stateHandler(e.target.value)}
         
           />
-          <Button type="submit" className="my-2 my-sm-0">
+          <Button variant="outline-primary" type="submit" className="my-2 my-sm-0">
             Search
           </Button>
         </Form>
