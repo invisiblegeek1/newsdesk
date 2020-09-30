@@ -32,3 +32,24 @@
 #heading{
     text-align: left;
 }
+.button1,.button2{
+font-size: 20px;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: white;
+box-shadow: 2px 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+border-color: transparent;
+text-align: center;
+
+}
+.button1{
+    position: absolute;
+    top:50vw;
+    left: 20px;
+}
+.button2{
+    position: absolute;
+    top:50vw;
+    right: 20px;
+}
