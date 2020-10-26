@@ -3,25 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navbar from "./navbar/navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Card  from "./component";
-import Readmore from './readmore';
-
+import Card from "./component";
+import Readmore from "./readmore";
 
 function App(props) {
- 
   return (
-  
     <Router>
-      
       <div className="App">
         <Navbar />
         <div className="container">
           <Switch>
-            <Route
-              path="/"
-              exact
-              render={() => <Card title="" />}
-            />
+            <Route path="/" exact render={() => <Card title="" />} />
             <Route
               path="/business"
               exact
@@ -47,21 +39,13 @@ function App(props) {
               exact
               component={() => <Card title="technology" />}
             />
-             <Route
+            <Route
               path="/sports"
               exact
               component={() => <Card title="sports" />}
             />
-             <Route
-              path="/search/:id"
-              exact
-              component={Card}
-            />
-            <Route
-              path="/readmore/:id"
-              exact
-              component={Readmore}
-            />
+            <Route path="/search/:id" exact component={Card} />
+            <Route path="/readmore/:id" exact component={Readmore} />
           </Switch>
         </div>
       </div>

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import "./component.css";
 import { withRouter } from "react-router-dom";
 import Data from './data';
+import {Spinner} from 'react-bootstrap';
 
 
 
@@ -29,15 +30,16 @@ function Card(props) {
       index:index
     });
   };
+  console.log(data)
 
   return (
     <div id="container">
-      {" "}
-      {data.map((res, index) => {
+      
+      {data?data.map((res, index) => {
         return (
           <div className="cardContainer" id="card" key={index}>
             <p className="title">
-                {res.title.replace(/^(.{30}[^\s]*).*/, "$1") + "..."}
+                {res.title.replace(/^(.{50}[^\s]*).*/, "$1") + "..."}
               </p>
             <div className="imageContainer" id="photocontainer">
               <img
@@ -66,9 +68,9 @@ function Card(props) {
             </div>
           </div>
         );
-      })}
+      }):<Spinner animation="border" variant="primary" />}
     </div>
   );
 }
 export default withRouter(Card);
-//  t.replace(/^(.{1}[^\s]*).*/, "$1") + "\n"
+

@@ -1,78 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-#card{
-    display:flex;
-    align-items: center;
-    flex-direction: column;
-    
-    
-    
-    margin: 3em;
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+#card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-    
-    border-radius: 10px;
+  margin-top: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 
-    padding: 5px;
-    box-shadow: 2px 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
-    background-color: white;
+  border-radius: 10px;
 
-    
-    
-    
+  padding: 5px;
+  box-shadow: 2px 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
-#photocontainer{
-    height:50vh;
-
+#photocontainer {
+  height: 50vh;
 }
-#photo{
-    height: 100%;
-    width: 100%;
-    border-radius: 10px  ;
-
+#photo {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
 }
-#container{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    
-    padding-top: 5em;
-    padding-left: 5px;
-    padding-right: 5px;
-   
-    background-color: #f2f5ff;
-  }
-    
-    
+#container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 
-.title{
-    
-    border-radius: 0 0 10px 10px ;
-    text-align:left;
-    padding:5px;
-    height: 100%;
-    width: 100%;
-    font-family: 'Lato', sans-serif;
-    display: inline-block;
-    font-weight: 800;
-    margin-bottom: auto;
+  padding-top: 5em;
+  margin: 15px;
 
-}
-.article{
-    
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-    border-radius:0 0 10px 10px;
+  background-color: #f2f5ff;
 }
 
-.title-container .readmorebtn{
-    width:95%;
-    margin: 5px;
-    border-radius: 20px;
-    background-color: turquoise;
-    border-color: transparent;
-    box-shadow: 2px 0 0 1px turquoise,2px 0 0 1px rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.20);
+.title {
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+  font-weight: 800;
+  margin-bottom: auto;
+}
+.article {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  border-radius: 0 0 10px 10px;
+}
 
-
-    
-    
+.title-container .readmorebtn {
+  width: 95%;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: turquoise;
+  border-color: transparent;
+  box-shadow: 2px 0 0 1px turquoise, 2px 0 0 1px rgba(0, 0, 0, 0.04),
+    0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
