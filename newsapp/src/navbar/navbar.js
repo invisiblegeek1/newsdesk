@@ -14,8 +14,8 @@ function NavBar(props) {
   return (
     <div className="navbar-container">
       <Navbar
-        bg="primary"
-        variant="dark"
+        bg="light"
+        variant="light"
         fixed="top"
         expand="lg"
         className="mb-3"
@@ -26,9 +26,7 @@ function NavBar(props) {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-        <NavLink className="nav-link" to="/">
-            Home
-          </NavLink>
+        
           <NavLink className="nav-link" to="/business">
             Business
           </NavLink>
@@ -65,7 +63,7 @@ function NavBar(props) {
             onChange={(e) => stateHandler(e.target.value)}
         
           />
-          <Button type="submit" className="my-2 my-sm-0">
+          <Button variant="outline-primary" type="submit" className="my-2 my-sm-0">
             Search
           </Button>
         </Form>
