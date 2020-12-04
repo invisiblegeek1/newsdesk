@@ -7,7 +7,7 @@ import {Spinner} from 'react-bootstrap';
 
 
 function Card(props) {
-  const [data, dataHandler] = useState(Data);
+  const [data, dataHandler] = useState({loading:true});
   useEffect(() => {
     async function loadData() {
       let url = props.match.params.id
@@ -16,7 +16,7 @@ function Card(props) {
       fetch(`https://newszapp.herokuapp.com/${url}`)
         .then((response) => response.json())
         .then((res) => {
-          dataHandler(res.articles);
+          dataHandler({loading:false, resData:res.articles });
         })
         .catch((error) => console.log(error));
     }
@@ -34,9 +34,11 @@ function Card(props) {
 
   return (
     <div id="container">
-      
-      {data?data.map((res, index) => {
+     
+      {data.loading?<Spinner className="loader" animation="border" variant="primary" />:data.resData.map((res, index) => {
         return (
+          <div>
+            
           <div className="cardContainer" id="card" key={index}>
             <p className="title">
                 {res.title.replace(/^(.{50}[^\s]*).*/, "$1") + "..."}
@@ -67,10 +69,11 @@ function Card(props) {
               
             </div>
           </div>
-        );
-      }):<Spinner animation="border" variant="primary" />}
+          </div>
+              );
+      })}
     </div>
-  );
+      );
 }
 export default withRouter(Card);
 
