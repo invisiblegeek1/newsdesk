@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./readmore.css";
 
 const Readmore = (props) => {
-  const input = props.location.data;
+  const input = props.location.content;
   let text;
   const [inx, inHandler] = useState(props.location.index);
   if (input[inx].description) {

@@ -7,7 +7,7 @@ import {
   Button,
 } from "react-bootstrap";
 import "./navbar.css";
-import Dark from './dark';
+// import Dark from './dark';
 import { withRouter, NavLink } from "react-router-dom";
 
 function NavBar(props) {
@@ -47,7 +47,7 @@ function NavBar(props) {
             Technology
           </NavLink>
         </Nav>
-        <Dark/>
+        {/* <Dark/> */}
         <Form
           inline
           onSubmit={(e) => {

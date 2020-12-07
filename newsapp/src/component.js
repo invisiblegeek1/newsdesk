@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import "./component.css";
 import { withRouter } from "react-router-dom";
-import Data from './data';
+//import Data from './data';
 import {Spinner} from 'react-bootstrap';
 
 
@@ -16,7 +16,7 @@ function Card(props) {
       fetch(`https://newszapp.herokuapp.com/${url}`)
         .then((response) => response.json())
         .then((res) => {
-          dataHandler({loading:false, resData:res.articles });
+          dataHandler({loading:false, Data:res.articles });
         })
         .catch((error) => console.log(error));
     }
@@ -26,7 +26,7 @@ function Card(props) {
   const readmore = (index, res) => {
     props.history.push({
       pathname: `/readmore/${res.title}`,
-      data:data,
+      content:data.Data,
       index:index
     });
   };
@@ -35,7 +35,7 @@ function Card(props) {
   return (
     <div id="container">
      
-      {data.loading?<Spinner className="loader" animation="border" variant="primary" />:data.resData.map((res, index) => {
+      {data.loading?<Spinner className="loader" animation="border" variant="primary" />:data.Data.map((res, index) => {
         return (
           <div>
             
