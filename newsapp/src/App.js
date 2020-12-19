@@ -5,6 +5,7 @@ import Navbar from "./navbar/navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Card from "./component";
 import Readmore from "./readmore";
+import {Foot} from "./footer";
 
 function App(props) {
   return (
@@ -49,6 +50,7 @@ function App(props) {
           </Switch>
         </div>
       </div>
+      <Foot />
     </Router>
   );
 }

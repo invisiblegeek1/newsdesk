@@ -1,9 +1,11 @@
 import React from 'react'
-export const Dark = () =>{
+export const Dark = (props) =>{
+    
+    
     return (
         <div className="toggleContainer">
            <label class="switch">
-  <input type="checkbox"></input>
+  <input className="checkBox" type="checkbox"  {...props}></input>
   <span class="slider round"></span>
 </label> 
 
