@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./readmore.css";
 
 const Readmore = (props) => {
-  const input = props.location.data;
+  const input = props.location.content;
   let text;
   const [inx, inHandler] = useState(props.location.index);
   if (input[inx].description) {
@@ -30,12 +30,12 @@ const Readmore = (props) => {
         <a href={learnMore}>learn more</a>
       </button>
 
-      <button className="button1" onClick={() => inHandler(inx - 1)}>
+      {input[inx - 1]?(<button className="button1" onClick={() => inHandler(inx - 1)}>
         <i class="fas fa-less-than"></i>
-      </button>
-      <button className="button2" onClick={() => inHandler(inx + 1)}>
+      </button>):(<button className="btn" style={{ visibility: "hidden" }}></button>)}
+      {input[inx + 1]?(<button className="button2" onClick={() => inHandler(inx + 1)}>
         <i class="fas fa-greater-than"></i>
-      </button>
+      </button>):(<button className="btn" style={{ visibility: "hidden" }}></button>)}
     </div>
   );
 };

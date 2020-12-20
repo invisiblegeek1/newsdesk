@@ -1,22 +1,22 @@
 import React,{useState,useEffect} from "react";
 import "./component.css";
 import { withRouter } from "react-router-dom";
-import Data from './data';
+//import Data from './data';
 import {Spinner} from 'react-bootstrap';
 
 
 
 function Card(props) {
-  const [data, dataHandler] = useState(Data);
+  const [data, dataHandler] = useState({loading:true});
   useEffect(() => {
     async function loadData() {
-      let url = props.match.params.id
+      let url = ()=>{ return props.match.params.id
         ? `search/${props.match.params.id}`
-        : props.title;
-      fetch(`https://newszapp.herokuapp.com/${url}`)
+        : props.title}
+      fetch(`https://newszapp.herokuapp.com/${url()}`)
         .then((response) => response.json())
         .then((res) => {
-          dataHandler(res.articles);
+          dataHandler({loading:false, Data:res.articles });
         })
         .catch((error) => console.log(error));
     }
@@ -26,7 +26,7 @@ function Card(props) {
   const readmore = (index, res) => {
     props.history.push({
       pathname: `/readmore/${res.title}`,
-      data:data,
+      content:data.Data,
       index:index
     });
   };
@@ -34,9 +34,11 @@ function Card(props) {
 
   return (
     <div id="container">
-      
-      {data?data.map((res, index) => {
+     
+      {data.loading?<Spinner className="loader" animation="border" variant="primary" />:data.Data.map((res, index) => {
         return (
+          <div>
+            
           <div className="cardContainer" id="card" key={index}>
             <p className="title">
                 {res.title.replace(/^(.{50}[^\s]*).*/, "$1") + "..."}
@@ -67,10 +69,11 @@ function Card(props) {
               
             </div>
           </div>
-        );
-      }):<Spinner animation="border" variant="primary" />}
+          </div>
+              );
+      })}
     </div>
-  );
+      );
 }
 export default withRouter(Card);
 
