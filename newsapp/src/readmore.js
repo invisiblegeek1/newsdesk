@@ -3,9 +3,9 @@ import { withRouter } from "react-router-dom";
 import "./readmore.css";
 
 const Readmore = (props) => {
-  const input = props.location.content;
+  const input = props.location.state.content;
   let text;
-  const [inx, inHandler] = useState(props.location.index);
+  const [inx, inHandler] = useState(props.location.state.index);
   if (input[inx].description) {
     text = input[inx].description.split("[+")[0];
   } else {
@@ -27,15 +27,15 @@ const Readmore = (props) => {
 
       <div className="content">{text}</div>
       <button className="learnBtn">
-        <a href={learnMore}>learn more</a>
+        <a href={learnMore}>know more from {input[inx].source.name}</a>
       </button>
 
-      {input[inx - 1]?(<button className="button1" onClick={() => inHandler(inx - 1)}>
+      {input[inx - 1] ? (<button className="button1" onClick={() => inHandler(inx - 1)}>
         <i class="fas fa-less-than"></i>
-      </button>):(<button className="btn" style={{ visibility: "hidden" }}></button>)}
-      {input[inx + 1]?(<button className="button2" onClick={() => inHandler(inx + 1)}>
+      </button>) : (<button className="btn" style={{ visibility: "hidden" }}></button>)}
+      {input[inx + 1] ? (<button className="button2" onClick={() => inHandler(inx + 1)}>
         <i class="fas fa-greater-than"></i>
-      </button>):(<button className="btn" style={{ visibility: "hidden" }}></button>)}
+      </button>) : (<button className="btn" style={{ visibility: "hidden" }}></button>)}
     </div>
   );
 };
