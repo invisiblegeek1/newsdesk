@@ -10,10 +10,10 @@ function Card(props) {
   const [data, dataHandler] = useState({loading:true});
   useEffect(() => {
     async function loadData() {
-      let url = props.match.params.id
+      let url = ()=>{ return props.match.params.id
         ? `search/${props.match.params.id}`
-        : props.title;
-      fetch(`https://newszapp.herokuapp.com/${url}`)
+        : props.title}
+      fetch(`https://newszapp.herokuapp.com/${url()}`)
         .then((response) => response.json())
         .then((res) => {
           dataHandler({loading:false, Data:res.articles });

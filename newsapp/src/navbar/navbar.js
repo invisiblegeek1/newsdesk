@@ -7,16 +7,16 @@ import {
   Button,
 } from "react-bootstrap";
 import "./navbar.css";
-import { Dark } from './darkmode';
+// import { Dark } from './darkmode';
 import { withRouter, NavLink } from "react-router-dom";
 
 function NavBar(props) {
   const [input, stateHandler] = useState("")
-  const [check, checkHandler] = useState({ checked: false })
-  if (check.checked === "checked") {
-    console.log("checke sussefully")
+  // const [check, checkHandler] = useState({ checked: false })
+  // if (check.checked === "checked") {
+  //   console.log("checke sussefully")
 
-  }
+  // }
 
   return (
     <div className="navbar-container">
@@ -52,7 +52,7 @@ function NavBar(props) {
             <NavLink className="nav-link" to="/technology">
               Technology
           </NavLink>
-            <Dark checked={check.checked} onChange={(e) => checkHandler({ checked: e.target.checked }) } />
+            {/* <Dark checked={check.checked} onChange={(e) => checkHandler({ checked: e.target.checked }) } /> */}
           </Nav>
 
           <Form
