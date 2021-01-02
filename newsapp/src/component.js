@@ -7,8 +7,11 @@ import { Spinner } from 'react-bootstrap';
 
 
 
+
+
 function Card(props) {
   const [data, dataHandler] = useState({ loading: true });
+  
 
   useEffect(() => {
     async function loadData() {
@@ -17,7 +20,7 @@ function Card(props) {
           ? `search/${props.match.params.id}`
           : props.title
       }
-      let title = url();
+      let title = url()+'heading';
       let session = JSON.parse(sessionStorage.getItem(title));
       if (session) {
 
@@ -49,14 +52,14 @@ function Card(props) {
 
 
   return (
-    <div id="container">
+    <div id="container" style={{backgroundColor:'#f2f5ff'}}>
       <Fade left>
 
         {data.loading ? <Spinner className="loader" animation="border" variant="primary" /> : data.Data.map((res, index) => {
           return (
             <div>
 
-              <div className="cardContainer" id="card" key={index}>
+              <div className="cardContainer" id="card" key={index} style={{backgroundColor:'white'}}>
 
                 <div className="imageContainer" id="photocontainer">
                   <img
