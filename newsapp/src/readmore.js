@@ -3,9 +3,9 @@ import { withRouter } from "react-router-dom";
 import "./readmore.css";
 
 const Readmore = (props) => {
-  const input = props.location.content;
+  const input = props.location.state.content;
   let text;
-  const [inx, inHandler] = useState(props.location.index);
+  const [inx, inHandler] = useState(props.location.state.index);
   if (input[inx].description) {
     text = input[inx].description.split("[+")[0];
   } else {
@@ -27,7 +27,7 @@ const Readmore = (props) => {
 
       <div className="content">{text}</div>
       <button className="learnBtn">
-        <a href={learnMore}>learn more</a>
+        <a href={learnMore}>know more from {input[inx].source.name}</a>
       </button>
 
       {input[inx - 1]?(<button className="button1" onClick={() => inHandler(inx - 1)}>
