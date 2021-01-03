@@ -8,8 +8,11 @@ const Readmore = (props) => {
   const [inx, inHandler] = useState(props.location.state.index);
   if (input[inx].description) {
     text = input[inx].description.split("[+")[0];
-  } else {
+  } else if(input[inx].content) {
     text = input[inx].content.split("[+")[0];
+  }
+  else{
+    text=input[inx].source.name;
   }
   let image = input[inx].urlToImage
     ? input[inx].urlToImage

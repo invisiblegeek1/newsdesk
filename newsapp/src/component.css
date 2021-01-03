@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width:300px;
+  min-width: 270px;
+  height: fit-content;
+  margin: 10px;
 
-  margin-top: 3em;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-bottom: 1em;
 
   border-radius: 10px;
 
@@ -16,17 +16,19 @@
   
 }
 #photocontainer {
-  height: 50vh;
+  height: fit-content;
 }
 #photo {
-  height: 100%;
+  height: 300px;
   width: 100%;
   border-radius: 10px;
 }
 #container {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display:flex;
+  flex-wrap: wrap;
+  max-width: fit-content;
+  min-width: 350px;
+
 
   padding-top: 5em;
   margin: 15px;
@@ -41,25 +43,25 @@
   height: 100%;
   width: 100%;
   font-family: "Lato", sans-serif;
-  display: inline-block;
+  display: flex;
   font-weight: 800;
   margin-bottom: auto;
 }
-.article {
-  width: 100%;
-  height: 100%;
-  display: inline-flex;
-  border-radius: 0 0 10px 10px;
-}
+
 
 .title-container .readmorebtn {
   width: 95%;
   margin: 5px;
+  display: flex;
   border-radius: 20px;
   background-color: turquoise;
   border-color: transparent;
-  box-shadow: 2px 0 0 1px turquoise, 2px 0 0 1px rgba(0, 0, 0, 0.04),
+  box-shadow: 2px 0 0 1px turquoise, 2px 0 0 1px rgba(3, 2, 2, 0.04),
     0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.readmorebtn{
+  justify-content: center;
+  text-align: center;
 }
 .loader{
   align-self: center;

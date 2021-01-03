@@ -18,6 +18,7 @@ function App(props) {
           <Switch>
             <Route path="/" exact render={() => <Card title="" />} />
             <Route
+            
               path="/business"
               exact
               component={() => <Card title="business" />}
