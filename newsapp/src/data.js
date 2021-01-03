@@ -290,3 +290,15 @@ const Data = [
   },
 ];
 export default Data;
+
+
+
+
+
+
+
+
+
+display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
