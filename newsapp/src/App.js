@@ -14,7 +14,7 @@ function App(props) {
       <div className="App">
         <Navbar />
         <Headline />
-        <div className="container">
+        <div id="container">
           <Switch>
             <Route path="/" exact render={() => <Card title="" />} />
             <Route

@@ -26,7 +26,7 @@ const Readmore = (props) => {
       </div>
 
       <h1 id="heading">{input[inx].title}</h1>
-      <hr></hr>
+      
 
       <div className="content">{text}</div>
       <button className="learnBtn">

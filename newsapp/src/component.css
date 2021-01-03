@@ -26,11 +26,12 @@
 #container {
   display:flex;
   flex-wrap: wrap;
-  max-width: fit-content;
+  max-width: 100vw;
   min-width: 350px;
+  align-items: center;
+  justify-content: center;
 
-
-  padding-top: 5em;
+  padding-top: 20px;
   margin: 15px;
 
   
@@ -53,15 +54,15 @@
   width: 95%;
   margin: 5px;
   display: flex;
-  border-radius: 20px;
-  background-color: turquoise;
-  border-color: transparent;
-  box-shadow: 2px 0 0 1px turquoise, 2px 0 0 1px rgba(3, 2, 2, 0.04),
-    0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ 
 }
 .readmorebtn{
   justify-content: center;
   text-align: center;
+  border-radius: 5px;
+  background-color: #007bff;
+  border-color: transparent;
+  
 }
 .loader{
   align-self: center;
@@ -70,3 +71,4 @@
   top:50%;
   left:50%;
 }
+
