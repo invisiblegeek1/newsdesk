@@ -13,6 +13,8 @@
 
   padding: 5px;
   box-shadow: 2px 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  
   
 }
 #photocontainer {
@@ -47,21 +49,35 @@
   display: flex;
   font-weight: 800;
   margin-bottom: auto;
+ 
+  
 }
 
 
-.title-container .readmorebtn {
-  width: 95%;
-  margin: 5px;
+.title-container{
+  width: 260px;
+  margin: 20px;
   display: flex;
- 
+  background-color: 'white';
+  flex-direction: column;
+  
+  
+
+
 }
 .readmorebtn{
   justify-content: center;
   text-align: center;
-  border-radius: 5px;
-  background-color: #007bff;
+  
+  background-color: rgba(28, 12, 215, 0.8667);
   border-color: transparent;
+
+  color: white;
+  height: 40px;
+  border-radius: 5px;
+  border-color: transparent;
+  width: 100%;
+  box-shadow: 2px 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   
 }
 .loader{
@@ -71,4 +87,5 @@
   top:50%;
   left:50%;
 }
+
 

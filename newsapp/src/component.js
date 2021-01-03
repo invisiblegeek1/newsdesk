@@ -59,6 +59,7 @@ function Card(props) {
         {data.loading ? <Spinner className="loader" animation="border" variant="primary" /> : data.Data.map((res, index) => {
           return (
             <Fade left>
+              
 
               <div className="cardContainer" id="card" key={index} style={{backgroundColor:'white'}}>
 
@@ -74,6 +75,7 @@ function Card(props) {
                     alt=""
                   />
                 </div>
+                
                 <div className="title-container">
                   <p className="title">
                     {res.title.replace(/^(.{50}[^\s]*).*/, "$1") + "..."}
@@ -86,16 +88,19 @@ function Card(props) {
                     size="lg"
                     onClick={() => readmore(index, res)}
                   >
-                    Readmore
+                  Readmore
               </button>
 
-                </div>
+                
               </div>
+              </div> 
+              
               </Fade>
           );
         })}
      
     </div>
+    
   );
 }
 export default withRouter(Card);

@@ -16,7 +16,7 @@ export const Foot = () => {
 
     }
     return (
-        <footer style={Style}>
+        <footer className="footerContainer" style={Style}>
             <h2>Developed by an amazing people</h2> 
             <div style={fontStyle}>
                 <a style={{margin:"10px"}} href="https://github.com/invisiblegeek1"><i class="fab fa-github"></i></a>

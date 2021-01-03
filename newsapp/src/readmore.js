@@ -25,7 +25,7 @@ const Readmore = (props) => {
         <img className="image" src={image} alt="" />
       </div>
 
-      <h1 id="heading">{input[inx].title}</h1>
+      <p id="heading">{input[inx].title}</p>
       
 
       <div className="content">{text}</div>
