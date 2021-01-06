@@ -63,17 +63,17 @@
 .learnBtn {
   border-color: transparent;
   text-align: center;
-  background-color: aqua;
+  background-color: rgba(28, 12, 215,1);
   color: black;
   width: 65%;
   margin: 15px;
   
-  border-radius: 20px;
+  border-radius: 5px;
   box-shadow: 2px 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .learnBtn a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 @media only screen and (max-width: 760px) {
