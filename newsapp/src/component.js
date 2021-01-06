@@ -20,7 +20,7 @@ function Card(props) {
           ? `search/${props.match.params.id}`
           : props.title
       }
-      let heading=url();
+      const heading=url();
       sessionStorage.newsHeading=heading;
       sessionStorage.setItem('newsHeading', heading)
       let title = url()+'heading';
@@ -46,7 +46,7 @@ function Card(props) {
 
   const readmore = (index, res) => {
     props.history.push({
-      pathname: `/readmore/${res.title}`,
+      pathname: `/readmore/${encodeURIComponent(res.title)}`,
       state: {
         content: data.Data,
         index: index
