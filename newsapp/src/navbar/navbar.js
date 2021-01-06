@@ -48,7 +48,7 @@ function NavBar(props) {
         className="mb-3"
         style={
           {
-            backgroundColor:"rgba(28, 12, 215, 0.8667)",
+            backgroundColor:"rgba(28, 12, 215,1)",
             color:"white",
 
           }
