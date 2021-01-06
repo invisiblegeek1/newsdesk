@@ -6,14 +6,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Card from "./component";
 import Readmore from "./readmore";
 import {Foot} from "./footer";
-import {Headline} from "./headlines";
+// import Headline from "./headlines";
 
 function App(props) {
   return (
     <Router>
       <div className="App">
         <Navbar />
-        <Headline />
+        {/* <Headline /> */}
         <div id="container">
           <Switch>
             <Route path="/" exact render={() => <Card title="" />} />

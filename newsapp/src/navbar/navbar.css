@@ -6,4 +6,21 @@
 }
 .mb-3{
     box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+    opacity: 1;
+    color: white;
 }
+.navbar-light .navbar-nav .nav-link,.navbar-light .navbar-brand{
+    color:white;
+}
+.btn-outline-primary{
+    color: black;
+    border-color: white;
+    background-color: white;
+}
+.btn-outline-primary:hover{
+    background-color:rgba(28, 14, 180, 0.404) ;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: rgb(129, 161, 230);
+}
+

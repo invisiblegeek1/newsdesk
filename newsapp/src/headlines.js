@@ -1,11 +1,15 @@
 import React from 'react';
-import Card from './component'
 
-export const Headline = ()=>{
+
+  const Headline = ()=>{
+    const sessionHeading = ()=>sessionStorage.getItem('newsHeading');
+    let textHeading=sessionHeading?`your news on ${sessionHeading}`:'News for you';
+    
     return (
         <div>
-            <h4>{Card.url}</h4>
+            <h4>{textHeading}</h4>
         </div>
     )
 
 }
+export default Headline ;

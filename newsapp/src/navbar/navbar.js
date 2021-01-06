@@ -42,11 +42,17 @@ function NavBar(props) {
   return (
     <div className="navbar-container">
       <Navbar
-        bg='light'
-        variant='light'
+        
         fixed="top"
         expand="lg"
         className="mb-3"
+        style={
+          {
+            backgroundColor:"rgba(28, 12, 215, 0.8667)",
+            color:"white",
+
+          }
+        }
       >
         <NavLink className="navbar-brand" to="/" exact>
           NewsDesk

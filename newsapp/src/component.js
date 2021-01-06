@@ -20,6 +20,9 @@ function Card(props) {
           ? `search/${props.match.params.id}`
           : props.title
       }
+      let heading=url();
+      sessionStorage.newsHeading=heading;
+      sessionStorage.setItem('newsHeading', heading)
       let title = url()+'heading';
       let session = JSON.parse(sessionStorage.getItem(title));
       if (session) {
