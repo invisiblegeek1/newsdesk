@@ -11,19 +11,26 @@ import { Spinner } from 'react-bootstrap';
 
 function Card(props) {
   const [data, dataHandler] = useState({ loading: true });
+  const [title,titleHandler]=useState(`news for you`);
   
 
   useEffect(() => {
     async function loadData() {
+      titleHandler(props.match.params.id
+        ? `your search results for ${props.match.params.id}`
+        : `your top ${props.title} news`);
       let url = () => {
+        
+      
+      
         return props.match.params.id
           ? `search/${props.match.params.id}`
-          : props.title
+          : props.title;
+          
       }
-      const heading=url();
-      sessionStorage.newsHeading=heading;
-      sessionStorage.setItem('newsHeading', heading)
-      let title = url()+'heading';
+      
+      
+      
       let session = JSON.parse(sessionStorage.getItem(title));
       if (session) {
 
@@ -42,7 +49,7 @@ function Card(props) {
       }
     }
     loadData();
-  }, [props.title, props.match.params.id]);
+  }, [props.title, props.match.params.id,title]);
 
   const readmore = (index, res) => {
     props.history.push({
@@ -57,8 +64,8 @@ function Card(props) {
 
   return (
     <div id="container" style={{backgroundColor:'#f2f5ff'}}>
-      
-
+      <div className="headingContainer">{title}</div>
+      <div className="cardOuterContainer">
         {data.loading ? <Spinner className="loader" animation="border" variant="primary" /> : data.Data.map((res, index) => {
           return (
             <Fade left>
@@ -94,14 +101,15 @@ function Card(props) {
                   Readmore
               </button>
 
-                
+               
               </div>
               </div> 
               
               </Fade>
+               
           );
         })}
-     
+     </div>
     </div>
     
   );
