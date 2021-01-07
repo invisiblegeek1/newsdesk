@@ -52,6 +52,7 @@ function App(props) {
             <Route path="/readmore/:id" exact component={Readmore} />
           </Switch>
         </div>
+        
       </div>
       <Foot />
     </Router>

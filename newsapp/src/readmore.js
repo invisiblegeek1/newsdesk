@@ -8,11 +8,11 @@ const Readmore = (props) => {
   const [inx, inHandler] = useState(props.location.state.index);
   if (input[inx].description) {
     text = input[inx].description.split("[+")[0];
-  } else if(input[inx].content) {
+  } else if (input[inx].content) {
     text = input[inx].content.split("[+")[0];
   }
-  else{
-    text=input[inx].source.name;
+  else {
+    text = input[inx].source.name;
   }
   let image = input[inx].urlToImage
     ? input[inx].urlToImage
@@ -21,13 +21,11 @@ const Readmore = (props) => {
 
   return (
     <div className="readmore-container" key={inx}>
+
       <div className="readmoreimageContainer">
         <img className="image" src={image} alt="" />
       </div>
-
       <p id="heading">{input[inx].title}</p>
-      
-
       <div className="content">{text}</div>
       <button className="learnBtn">
         <a href={learnMore}>know more from {input[inx].source.name}</a>

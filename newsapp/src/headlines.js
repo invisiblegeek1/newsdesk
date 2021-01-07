@@ -2,8 +2,9 @@ import React from 'react';
 
 
   const Headline = ()=>{
-    const sessionHeading = ()=>sessionStorage.getItem('newsHeading');
-    let textHeading=sessionHeading?`your news on ${sessionHeading}`:'News for you';
+    let sessionHeading = ()=>sessionStorage.getItem('newsHeading');
+    console.log(sessionHeading())
+    let textHeading=sessionHeading?`your news on ${sessionHeading()}`:'News for you';
     
     return (
         <div>
