@@ -61,10 +61,16 @@ function Card(props) {
     });
   };
 
+  const ImgUrlValidater = (ImageUrl)=>{
+    return  ImageUrl.includes("http://")
+      ? ImageUrl.replace("http://", "https://")
+      : ImageUrl;
+  }
+
 
   return (
     <div id="container" style={{backgroundColor:'#f2f5ff'}}>
-      <div className="headingContainer">{title}</div>
+    <div className="headingContainer">{title}</div> 
       <div className="cardOuterContainer">
         {data.loading ? <Spinner className="loader" animation="border" variant="primary" /> : data.Data.map((res, index) => {
           return (
@@ -77,11 +83,12 @@ function Card(props) {
                   <img
                     className="image"
                     id="photo"
-                    src={
-                      res.urlToImage
-                        ? res.urlToImage
-                        : "https://newsapi.org/images/n-logo-border.png"
+                    src={ImgUrlValidater( res.urlToImage
+                      ? res.urlToImage
+                      : "/mylogo1.png")
+                     
                     }
+
                     alt=""
                   />
                 </div>

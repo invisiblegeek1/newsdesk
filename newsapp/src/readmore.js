@@ -16,14 +16,20 @@ const Readmore = (props) => {
   }
   let image = input[inx].urlToImage
     ? input[inx].urlToImage
-    : "https://newsapi.org/images/n-logo-border.png";
+    : "/mylogo1.png";
   let learnMore = input[inx].url;
+
+  const ImgUrlValidater = (ImageUrl)=>{
+    return  ImageUrl.includes("http://")
+      ? ImageUrl.replace("http://", "https://")
+      : ImageUrl;
+  }
 
   return (
     <div className="readmore-container" key={inx}>
 
       <div className="readmoreimageContainer">
-        <img className="image" src={image} alt="" />
+        <img className="image" src={ImgUrlValidater(image)} alt="" />
       </div>
       <p id="heading">{input[inx].title}</p>
       <div className="content">{text}</div>

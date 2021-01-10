@@ -38,6 +38,7 @@
   text-align: left;
   margin: 10px;
   padding: 10px;
+  font-family: sans-serif;
 }
 .button1,
 .button2 {
@@ -89,6 +90,7 @@
   .readmore-container p{
     font-size: 17px;
     font-weight: 600;
+    font-family: serif;
   }
   .learnBtn a{
     font-size: 12px;
