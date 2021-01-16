@@ -83,6 +83,7 @@ function Card(props) {
                   <img
                     className="image"
                     id="photo"
+                    onError={(e) => (e.target.src = "/mylogo1.png")}
                     src={ImgUrlValidater( res.urlToImage
                       ? res.urlToImage
                       : "/mylogo1.png")

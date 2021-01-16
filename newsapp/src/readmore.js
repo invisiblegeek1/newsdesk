@@ -19,8 +19,8 @@ const Readmore = (props) => {
     : "/mylogo1.png";
   let learnMore = input[inx].url;
 
-  const ImgUrlValidater = (ImageUrl)=>{
-    return  ImageUrl.includes("http://")
+  const ImgUrlValidater = (ImageUrl) => {
+    return ImageUrl.includes("http://")
       ? ImageUrl.replace("http://", "https://")
       : ImageUrl;
   }
@@ -29,7 +29,7 @@ const Readmore = (props) => {
     <div className="readmore-container" key={inx}>
 
       <div className="readmoreimageContainer">
-        <img className="image" src={ImgUrlValidater(image)} alt="" />
+        <img className="image" onError={(e) => (e.target.src = "/mylogo1.png")} src={ImgUrlValidater(image)} alt="" />
       </div>
       <p id="heading">{input[inx].title}</p>
       <div className="content">{text}</div>
@@ -44,7 +44,7 @@ const Readmore = (props) => {
         <i class="fas fa-greater-than"></i>
       </button>) : (<button className="btn" style={{ visibility: "hidden" }}></button>)}
     </div>
-    
+
   );
 };
 export default withRouter(Readmore);
