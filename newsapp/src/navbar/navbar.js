@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import Switch from '@material-ui/core/Switch';
+import Switch from '@material-ui/core/Switch';
 import {
   Navbar,
   Nav,
@@ -13,43 +13,21 @@ import { withRouter, NavLink } from "react-router-dom";
 
 function NavBar(props) {
   const [input, stateHandler] = useState("")
-  //  const [State, setState] = useState({
-  //   checked: false,
-  //   color:"primary",
-  //   navcolor:"light",
-  //   containerColor:'#f2f5ff',
-  //     cardColor:'white'
-
-    
-  // });
-
-   
-
-  // function handleChange(event) {
-  //   setState({ ...State, [event.target.name]: event.target.checked, color: "secondary", navcolor: "dark" });
-  //   props.history.push({
-  //     containerColor: '1a1a2e',
-  //     cardColor: '16213e'
-  //   });
-
-
-  // }
   
 
  
 
-
   return (
     <div className="navbar-container">
       <Navbar
-        
+
         fixed="top"
         expand="lg"
         className="mb-3"
         style={
           {
-            backgroundColor:"rgba(28, 12, 215,1)",
-            color:"white",
+            backgroundColor: props.State.navBarColor,
+            color: "white",
 
           }
         }
@@ -79,12 +57,12 @@ function NavBar(props) {
             <NavLink className="nav-link" to="/technology">
               Technology
           </NavLink>
-          {/* <Switch
-            checked={State.checked}
-            onChange={handleChange}
-            name="checked"
-            color={State.color}
-          /> */}
+            <Switch
+              checked={props.State.checked}
+              onChange={props.onStateChange}
+              name="checked"
+              
+            />
 
           </Nav>
 
