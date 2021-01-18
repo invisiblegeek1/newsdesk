@@ -69,15 +69,16 @@ function Card(props) {
 
 
   return (
-    <div id="container" style={{backgroundColor:'#f2f5ff'}}>
-    <div className="headingContainer">{title}</div> 
+    
+    <div id="container" style={{backgroundColor:props.Style.ContainerColor}}>
+    <div className="headingContainer" style={{color:props.Style.TextColor}}>{title}</div> 
       <div className="cardOuterContainer">
         {data.loading ? <Spinner className="loader" animation="border" variant="primary" /> : data.Data.map((res, index) => {
           return (
             <Fade left>
               
 
-              <div className="cardContainer" id="card" key={index} style={{backgroundColor:'white'}}>
+              <div className="cardContainer" id="card" key={index} style={{backgroundColor:props.Style.CardColor}}>
 
                 <div className="imageContainer" id="photocontainer">
                   <img
@@ -95,7 +96,7 @@ function Card(props) {
                 </div>
                 
                 <div className="title-container">
-                  <p className="title">
+                  <p className="title" style={{color:props.Style.TextColor}}>
                     {res.title.replace(/^(.{50}[^\s]*).*/, "$1") + "..."}
                   </p>
 

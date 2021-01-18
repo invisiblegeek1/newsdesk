@@ -26,13 +26,13 @@ const Readmore = (props) => {
   }
 
   return (
-    <div className="readmore-container" key={inx}>
+    <div className="readmore-container" key={inx} style={{backgroundColor:props.Style.CardColor, color:props.Style.TextColor}}>
 
       <div className="readmoreimageContainer">
         <img className="image" onError={(e) => (e.target.src = "/mylogo1.png")} src={ImgUrlValidater(image)} alt="" />
       </div>
-      <p id="heading">{input[inx].title}</p>
-      <div className="content">{text}</div>
+      <p id="heading" style={{color:props.Style.TextColor}}>{input[inx].title}</p>
+      <div className="content" style={{color:props.Style.TextColor}}>{text}</div>
       <button className="learnBtn">
         <a href={learnMore}>know more from {input[inx].source.name}</a>
       </button>
