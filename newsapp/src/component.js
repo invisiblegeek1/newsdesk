@@ -72,7 +72,7 @@ function Card(props) {
     
     <div id="container" style={{backgroundColor:props.Style.ContainerColor}}>
     <div className="headingContainer" style={{color:props.Style.TextColor}}>{title}</div> 
-      <div className="cardOuterContainer">
+      <div className="cardOuterContainer" style={{backgroundColor:props.Style.ContainerColor}}>
         {data.loading ? <Spinner className="loader" animation="border" variant="primary" /> : data.Data.map((res, index) => {
           return (
             <Fade left>
@@ -102,7 +102,13 @@ function Card(props) {
 
 
                   <button
+
                     className="readmorebtn"
+                    style={{
+                        backgroundColor:props.Style.navBarColor,
+                        color: "white",
+            
+                      }}
                     variant="outline-primary"
                     size="lg"
                     onClick={() => readmore(index, res)}

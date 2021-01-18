@@ -33,7 +33,7 @@ const Readmore = (props) => {
       </div>
       <p id="heading" style={{color:props.Style.TextColor}}>{input[inx].title}</p>
       <div className="content" style={{color:props.Style.TextColor}}>{text}</div>
-      <button className="learnBtn">
+      <button className="learnBtn" style={{backgroundColor:props.Style.navBarColor,color: "white",}}>
         <a href={learnMore}>know more from {input[inx].source.name}</a>
       </button>
 
