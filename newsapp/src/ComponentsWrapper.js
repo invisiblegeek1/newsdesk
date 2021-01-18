@@ -10,10 +10,12 @@ import {Foot} from "./footer";
 function ComponentsWrapper() {
   const [State, setState] = useState({
     checked: false,
-    navBarColor: "rgba(28, 12, 215,1)",
+    navBarColor: "rgba(28, 12, 215, 0.8667)",
     ContainerColor:'#f2f5ff',
     CardColor:'white',
-    TextColor:"#000"
+    TextColor:"#000",
+    varient:'light',
+    
 
 
   });
@@ -25,7 +27,8 @@ function ComponentsWrapper() {
         navBarColor: "#121212",
         ContainerColor:'#000',
         CardColor:'#303237',
-        TextColor:"#ffffff"
+        TextColor:"#ffffff",
+        varient:'dark',
       });
 
     }

@@ -23,6 +23,7 @@ function NavBar(props) {
 
         fixed="top"
         expand="lg"
+        variant={props.State.varient}
         className="mb-3"
         style={
           {
@@ -57,10 +58,12 @@ function NavBar(props) {
             <NavLink className="nav-link" to="/technology">
               Technology
           </NavLink>
+          
             <Switch
               checked={props.State.checked}
               onChange={props.onStateChange}
               name="checked"
+              color='primary'
               
             />
 
