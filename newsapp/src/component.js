@@ -9,6 +9,7 @@ import { Spinner } from 'react-bootstrap';
 
 
 
+
 function Card(props) {
   const [data, dataHandler] = useState({ loading: true });
   const [title,titleHandler]=useState(`news for you`);
@@ -43,7 +44,7 @@ function Card(props) {
           .then((res) => {
             sessionStorage.setItem(title, JSON.stringify(res.articles))
             dataHandler({ loading: false, Data: res.articles });
-            console.log(res.articles);
+            
           })
           .catch((error) => console.log(error));
       }
@@ -71,6 +72,7 @@ function Card(props) {
   return (
     
     <div id="container" style={{backgroundColor:props.Style.ContainerColor}}>
+      
     <div className="headingContainer" style={{color:props.Style.TextColor}}>{title}</div> 
       <div className="cardOuterContainer" style={{backgroundColor:props.Style.ContainerColor}}>
         {data.loading ? <Spinner className="loader" animation="border" variant="primary" /> : data.Data.map((res, index) => {
