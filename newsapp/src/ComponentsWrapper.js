@@ -7,6 +7,8 @@ import Readmore from "./readmore";
 import {Foot} from "./footer";
 
 
+
+
 function ComponentsWrapper() {
   const [State, setState] = useState({
     checked: false,
@@ -45,6 +47,7 @@ function ComponentsWrapper() {
         <Navbar  onStateChange={handleChange} State={State}/>
         
         <div id="container" style={{padding:'0px',margin:'0px',backgroundColor:State.ContainerColor}}>
+        
           <Switch>
             <Route path="/" exact render={() => <Card title="" Style={State} />} />
             <Route
