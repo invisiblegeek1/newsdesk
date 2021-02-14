@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Card from "./component";
 import Readmore from "./readmore";
 import {Foot} from "./footer";
-import CarouselComponent from "./carousel";
+
 
 
 
@@ -45,7 +45,7 @@ function ComponentsWrapper() {
             <Router>
      
         <Navbar  onStateChange={handleChange} State={State}/>
-        <CarouselComponent/>
+        
         <div id="container" style={{padding:'0px',margin:'0px',backgroundColor:State.ContainerColor}}>
         
           <Switch>
